@@ -1,0 +1,49 @@
+#my Final Project
+
+from tkinter import *
+
+#calculation button logic
+def button_click():
+    res=int(e1.get())+ int(e2.get())+ int(e3.get())+ int(e4.get())
+    label_text.set(res)
+    label.grid(row=5, column=2)
+#GUI interface
+window = Tk()
+window.title('Pizza Calculator')
+label_text=StringVar();
+Label(window, text="What size pizza would you like? Small enter 15, Medium enter 20, or Large enter 25:").grid(row=1, sticky=W)
+Label(window, text="Would you like Pepperoni? Yes Enter 3 or N Enter 0").grid(row=2, sticky=W)
+Label(window, text="Would you like Extra Cheese? Yes enter 1 or No enter 0:").grid(row=3, sticky=W)
+Label(window, text="Would you like Breadsticks ? Yes enter 2 or N enter 0 ").grid(row=4, sticky=W)
+Label(window, text="Result of Bill:").grid(row=6, sticky=W)
+result=Label(window, text="", textvariable=label_text).grid(row=6,column=1, sticky=W)
+
+
+
+
+#get the entry windows
+e1 = Entry(window)
+e2 = Entry(window)
+e3 = Entry(window)
+e4 = Entry(window)
+ 
+e1.grid(row=1, column=2)
+e2.grid(row=2, column=2)
+e3.grid(row=3, column=2)
+e4.grid(row=4, column=2)
+
+
+
+
+
+#Button parameter
+
+button_calculate = Button(window, text="Calculate", padx=5, pady=5, command=button_click)
+
+#Put the button on the screen
+button_calculate.grid (row=0, column=3)
+
+
+
+
+window.mainloop()
